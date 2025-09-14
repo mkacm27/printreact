@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin' # Use Eclipse Temurin distribution of OpenJDK
-          java-version: '17' # Use JDK version 17
+          java-version: '11' # Use JDK version 11
 
       - name: 4. Install dependencies
         run: npm install
