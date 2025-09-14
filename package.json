@@ -21,6 +21,7 @@
     "lucide-react-native": "^0.378.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
+    "react-hook-form": "^7.62.0",
     "react-native": "0.72.6",
     "react-native-calendars": "^1.1304.1",
     "react-native-document-picker": "^9.1.2",
