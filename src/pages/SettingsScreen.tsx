@@ -5,8 +5,8 @@ import { GeneralSettingsTab } from "@/components/settings/GeneralSettingsTab";
 import { ClassesTab } from "@/components/settings/ClassesTab";
 import { TeachersTab } from "@/components/settings/TeachersTab";
 import { DocumentTypesTab } from "@/components/settings/DocumentTypesTab";
-import { SettingsHeader } from "./SettingsHeader";
-import { BackupRestoreSection } from "./BackupRestoreSection";
+import { SettingsHeader } from "./settings/SettingsHeader";
+import { BackupRestoreSection } from "./settings/BackupRestoreSection";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
