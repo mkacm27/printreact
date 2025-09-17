@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Printer, Check, Plus, Minus } from "lucide-react-native";
-import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { usePrintJobForm } from "../hooks/use-print-job-form";
 
 export const PrintJobForm: React.FC = () => {
@@ -205,21 +205,21 @@ export const PrintJobForm: React.FC = () => {
          </Form>
        </View>
 
-      <AlertDialog open={isDuplicateAlertOpen} onOpenChange={setIsDuplicateAlertOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Potential Duplicate Detected</AlertDialogTitle>
-            <AlertDialogDescription>
+      <Dialog open={isDuplicateAlertOpen} onOpenChange={setIsDuplicateAlertOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Potential Duplicate Detected</DialogTitle>
+            <DialogDescription>
               A similar print job was created in the last 5 minutes. 
               Are you sure you want to create another print job with the same details?
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
             <Button variant="ghost" onPress={cancelDuplicateSubmit}><Text>Cancel</Text></Button>
             <Button onPress={confirmDuplicateSubmit}><Text className="text-white">Create Anyway</Text></Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
