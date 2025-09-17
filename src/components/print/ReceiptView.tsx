@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Check, ArrowLeft, FileText, Printer, Send } from "lucide-react-native";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
-import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const ReceiptView = () => {
   const navigation = useNavigation<any>();
@@ -125,17 +125,17 @@ const ReceiptView = () => {
         </CardFooter>
       </Card>
 
-      <AlertDialog open={isPaidConfirmOpen} onOpenChange={setIsPaidConfirmOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Mark as {printJob.paid ? "Unpaid" : "Paid"}?</AlertDialogTitle>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
+      <Dialog open={isPaidConfirmOpen} onOpenChange={setIsPaidConfirmOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Mark as {printJob.paid ? "Unpaid" : "Paid"}?</DialogTitle>
+          </DialogHeader>
+          <DialogFooter>
             <Button variant="ghost" onPress={() => setIsPaidConfirmOpen(false)}><Text>Cancel</Text></Button>
             <Button onPress={handleTogglePaid}><Text className="text-white">Confirm</Text></Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </ScrollView>
   );
 };

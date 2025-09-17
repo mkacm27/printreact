@@ -6,7 +6,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { Plus, Edit, Trash2 } from "lucide-react-native";
 import { Teacher } from "@/lib/types";
 import { ItemFormDialog } from "./ItemFormDialog";
-import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTeachersStore } from "@/features/teachers/stores/teachers-store";
 import { useToast } from "@/hooks/use-toast";
 
@@ -101,18 +101,18 @@ export const TeachersTab: React.FC = () => {
         initialValue={editingItem?.name || ""}
       />
 
-      <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-            <AlertDialogDescription>This action will delete the teacher "{itemToDelete?.name}".</AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
+      <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you sure?</DialogTitle>
+            <DialogDescription>This action will delete the teacher "{itemToDelete?.name}".</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
             <Button variant="ghost" onPress={() => setIsDeleteDialogOpen(false)}><Text>Cancel</Text></Button>
             <Button className="bg-destructive" onPress={confirmDelete}><Text className="text-white">Delete</Text></Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </Card>
   );
 };
