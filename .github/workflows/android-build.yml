@@ -32,12 +32,18 @@ jobs:
       - name: 5. Grant execute permission to gradlew
         run: chmod +x android/gradlew
 
-      - name: 6. Build Android Release
+      - name: 6. Create Android assets directory
+        run: mkdir -p android/app/src/main/assets
+
+      - name: 7. Bundle React Native code and assets
+        run: npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+      - name: 8. Build Android Release
         run: |
           cd android
           ./gradlew assembleRelease
 
-      - name: 6. Upload APK artifact
+      - name: 9. Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release.apk
