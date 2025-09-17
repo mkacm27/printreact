@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import uuid from 'react-native-uuid';
 import { Settings, Class, Teacher, DocumentType } from "./types";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -19,23 +19,23 @@ export const defaultSettings: Settings = {
 
 // Sample data for classes
 export const defaultClasses: Class[] = [
-  { id: uuidv4(), name: "Class 1-A", totalUnpaid: 0 },
-  { id: uuidv4(), name: "Class 2-B", totalUnpaid: 0 },
-  { id: uuidv4(), name: "Class 3-C", totalUnpaid: 0 },
+  { id: uuid.v4() as string, name: "Class 1-A", totalUnpaid: 0 },
+  { id: uuid.v4() as string, name: "Class 2-B", totalUnpaid: 0 },
+  { id: uuid.v4() as string, name: "Class 3-C", totalUnpaid: 0 },
 ];
 
 // Sample data for teachers
 export const defaultTeachers: Teacher[] = [
-  { id: uuidv4(), name: "Sarah Johnson" },
-  { id: uuidv4(), name: "Michael Smith" },
-  { id: uuidv4(), name: "Emma Davis" },
+  { id: uuid.v4() as string, name: "Sarah Johnson" },
+  { id: uuid.v4() as string, name: "Michael Smith" },
+  { id: uuid.v4() as string, name: "Emma Davis" },
 ];
 
 // Sample data for document types
 export const defaultDocumentTypes: DocumentType[] = [
-  { id: uuidv4(), name: "Exam" },
-  { id: uuidv4(), name: "Worksheet" },
-  { id: uuidv4(), name: "Handout" },
+  { id: uuid.v4() as string, name: "Exam" },
+  { id: uuid.v4() as string, name: "Worksheet" },
+  { id: uuid.v4() as string, name: "Handout" },
 ];
 
 // Initialize local storage with default values if they don't exist
